@@ -3,123 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VALORANT CHALENGERS JAPAN 2025 SPLIT1 - Character Data Set</title>
+    <title>VALORANT CHALLENGERS JAPAN 2025 SPLIT1 - Character Data Set</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto; /* スマホで横スクロール可能にする */
+        }
         table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 1000px; /* スマホで折りたたまずスクロール */
         }
         th, td {
             padding: 8px;
             text-align: center;
             border: 1px solid #ddd;
         }
-        table.dataTable tfoot td {
-            text-align: center !important;
-        }
         th {
             background-color: #f4f4f4;
         }
         .atk {
             background-color: pink !important;
+            color: white !important;
         }
         .def {
             background-color: skyblue !important;
-        }
-        
-        .atk, .def {
             color: white !important;
         }
-
-        tfoot {
-            margin-top: 20px;
+        tfoot td {
+            font-weight: bold;
         }
-        
         td[data-role="duelist"] { background-color: #FFD1DC; } /* ピンク */
         td[data-role="controller"] { background-color: #D1C4E9; } /* 紫 */
         td[data-role="sentinel"] { background-color: #FFECB3; } /* 黄色 */
         td[data-role="initiator"] { background-color: #C8E6C9; } /* 緑 */
+
+        /* スマホ用調整 */
+        @media (max-width: 768px) {
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 6px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!--<label for="map-filter">マップ検索:</label>
-    <select id="map-filter">
-        <option value="">すべて</option>
-        <option value="ヘイブン">ヘイブン</option>
-        <option value="バインド">バインド</option>
-        <option value="スプリット">スプリット</option>
-        <option value="アビス">アビス</option>
-        <option value="パール">パール</option>
-        <option value="フラクチャー">フラクチャー</option>
-        <option value="サンセット">サンセット</option>
-        <option value="ロータス">ロータス</option>
-        <option value="アセント">アセント</option>
-    </select>
-    -->
-    <table id="data-table" class="display">
-        <thead>
-            <tr>
-                <th>Agent</th>
-                <th>All Map</th>
-                <th>ヘイブン</th>
-                <th>バインド</th>
-                <th>スプリット</th>
-                <th>アビス</th>
-                <th>パール</th>
-                <th>フラクチャー</th>
-                <th>サンセット</th>
-                <th>ロータス</th>
-                <th>アセント</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-        <tfoot>
-            <td></td>
-            <tr>
-                <td class="atk">ATK WIN</td>
-                <td>51%</td>
-                <td>50%</td>
-                <td>46%</td>
-                <td>48%</td>
-                <td>59%</td>
-                <td>56%</td>
-                <td>47%</td>
-                <td>55%</td>
-                <td>52%</td>
-                <td>59%</td>
-            </tr>
-            <tr>
-                <td class="def">DEF WIN</td>
-                <td>49%</td>
-                <td>50%</td>
-                <td>54%</td>
-                <td>52%</td>
-                <td>41%</td>
-                <td>44%</td>
-                <td>53%</td>
-                <td>45%</td>
-                <td>48%</td>
-                <td>41%</td>
-            </tr>
-            <tr>
-                <td class="map">MAP COUNT</td>
-                <td>135</td>
-                <td>35</td>
-                <td>21</td>
-                <td>17</td>
-                <td>16</td>
-                <td>14</td>
-                <td>10</td>
-                <td>9</td>
-                <td>8</td>
-                <td>5</td>
-            </tr>
-        </tfoot>
-    </table>
+
+    <div class="table-container">
+        <table id="data-table" class="display">
+            <thead>
+                <tr>
+                    <th>Agent</th>
+                    <th>ロール</th>
+                    <th>ヘイブン</th>
+                    <th>バインド</th>
+                    <th>スプリット</th>
+                    <th>アビス</th>
+                    <th>パール</th>
+                    <th>フラクチャー</th>
+                    <th>サンセット</th>
+                    <th>ロータス</th>
+                    <th>アセント</th>
+                    <th>All Map</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td class="atk">ATK WIN</td>
+                    <td></td><td>51%</td><td>50%</td><td>46%</td><td>48%</td><td>59%</td>
+                    <td>56%</td><td>47%</td><td>55%</td><td>52%</td><td>59%</td>
+                </tr>
+                <tr>
+                    <td class="def">DEF WIN</td>
+                    <td></td><td>49%</td><td>50%</td><td>54%</td><td>52%</td><td>41%</td>
+                    <td>44%</td><td>53%</td><td>45%</td><td>48%</td><td>41%</td>
+                </tr>
+                <tr>
+                    <td class="map">MAP COUNT</td>
+                    <td></td><td>135</td><td>35</td><td>21</td><td>17</td><td>16</td>
+                    <td>14</td><td>10</td><td>9</td><td>8</td><td>5</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 
     <script>
         $(document).ready(function() {
@@ -131,7 +114,7 @@
                     let role = row[1].trim();
                     tbody += `<tr>
                         <td data-role="${role}">${row[0]}</td>
-                        <td>${row[2]}</td>
+                        <td>${row[1]}</td>
                         <td>${row[3]}</td>
                         <td>${row[4]}</td>
                         <td>${row[5]}</td>
@@ -141,21 +124,20 @@
                         <td>${row[9]}</td>
                         <td>${row[10]}</td>
                         <td>${row[11]}</td>
+                        <td>${row[2]}</td>
                     </tr>`;
                 });
                 $("#data-table tbody").html(tbody);
-                var table = $('#data-table').DataTable();
-                
-                $('#map-filter').on('change', function() {
-                    var columnIndex = $('#map-filter option:selected').index();
-                    if (columnIndex > 0) {
-                        table.column(columnIndex).search('.').draw();
-                    } else {
-                        table.search('').columns().search('').draw();
-                    }
+
+                $("#data-table").DataTable({
+                    responsive: false,  // **折りたたみ無効**
+                    paging: false,      // **ページネーション無効**
+                    searching: false,   // **検索機能無効**
+                    info: false         // **情報表示なし**
                 });
             });
         });
     </script>
+
 </body>
 </html>
